@@ -11,7 +11,7 @@ public class Run {
     public static void main(String[] args){
         
         // Machine pouvant faire 5 boissons
-        Machine machine = new Machine(3);
+        Machine machine = new Machine(5);
         
         // On va chercher dans la base de données les différentes boissons  et ingrésients gardé en mémoire
         // quand on allume la machine
