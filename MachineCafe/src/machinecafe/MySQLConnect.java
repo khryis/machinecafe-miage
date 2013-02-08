@@ -11,7 +11,8 @@ public class MySQLConnect{
     private String driver;
     private String userName;
     private String password;
-
+    private String ahah;
+    
     private Connection conn;
     
     private MySQLConnect(){
