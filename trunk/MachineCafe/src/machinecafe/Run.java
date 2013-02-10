@@ -3,6 +3,8 @@ package machinecafe;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import machinecafe.model.Machine;
+import machinecafe.singleton.SaisieUtilisateur;
 
 public class Run {
     
@@ -10,10 +12,10 @@ public class Run {
     
     public static void main(String[] args){
         
-        // Machine pouvant faire 5 boissons
+        // On crée une machine à cafe pouvant distribuer 5 boissons
         Machine machine = new Machine(5);
         
-        // On va chercher dans la base de données les différentes boissons  et ingrésients gardé en mémoire
+        // On va chercher dans la base de données les différentes boissons et ingrédients
         // quand on allume la machine
         try {
             machine.initIngredientEtBoissonDansMachine();
@@ -23,7 +25,6 @@ public class Run {
         }
         
         int choix = 0;
-        
         while(choix != -1){
             System.out.println("Bonjour, veuillez faire un choix");
             System.out.println("[1] Acheter une boisson");
@@ -33,7 +34,6 @@ public class Run {
             System.out.println("[5] Ajouter ingrédient");
             System.out.println("[6] Vérifier Stocks");
             System.out.println("[7] Eteindre la machine");
-            //choix  = s.nextInt();
             choix  = SaisieUtilisateur.SAISIE.nextIntNotBlank();
             switch(choix){
                 case 1:
